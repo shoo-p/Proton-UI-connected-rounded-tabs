@@ -1,58 +1,3 @@
-   /*bookmarks bar color - make the bar translucent */
-  /*#PersonalToolbar{
-	background-color: rgb(43, 42, 51, 0.60) !important;
-	} */
-  
-  /*Bookmarks bar show on hover*/
-  #PersonalToolbar{
-	--uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
-	--uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
-	--uc-autohide-toolbar-delay: 250ms; /* The toolbar is hidden after delaytime */
-	
-	/* 0deg = "show" ; 90deg = "hide" ;  Set the following to control when bookmarks are shown */
-	--uc-autohide-toolbar-focus-rotation: 90deg; /* urlbar is focused */
-	--uc-autohide-toolbar-hover-rotation: 0deg; /* cursor is over the toolbar area */
-  }
-  
-  :root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 25px }
-  :root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 7px }
-  
-  #PersonalToolbar:not([customizing]){
-	position: relative;
-	margin-bottom: calc(0px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
-	transform: rotateX(90deg);
-	transform-origin: top;
-	transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
-	z-index: 1;
-  }
-  
-  #PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
-  
-  #nav-bar:focus-within + #PersonalToolbar{
-	transition-delay: 100ms !important;
-	transform: rotateX(var(--uc-autohide-toolbar-focus-rotation,0));
-  }
-  
-  #navigator-toolbox:hover > #PersonalToolbar{
-	transition-delay: 100ms !important;
-	transform: rotateX(var(--uc-autohide-toolbar-hover-rotation,0));
-  }
-  
-  #navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {  
-	transform: rotateX(0);
-  }
-
-  #navigator-toolbox{
-	border-bottom: none !important;
-}
-
-.tab-background {
-	border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-  margin-block: 2px 0 !important;
-}
-
-
 /* ---Tabs/Tab Bar height--- */
 :root {
 	--tab-min-height: 28px !important; 
@@ -67,14 +12,14 @@
    :root[sizemode="normal"] .titlebar-spacer[type=pre-tabs] {
 
 	display: flex !important;
-	width: 3px !important;
+	width: 14px !important;
 	
 	}
 
 :root:not([sizemode="normal"]) .titlebar-spacer[type=pre-tabs] {
 
 	display: flex !important;
-	width: 3px !important;
+	width: 14px !important;
 	
 	}
 
@@ -222,8 +167,6 @@ toolbarbutton {
   
 }
 
-:root { --toolbar-field-focus-border-color: transparent !important; }	/*remove default focus ring of url bar */
-
 #urlbar-background,#urlbar{ 
 
 	border-radius: 4px !important;
@@ -231,16 +174,16 @@ toolbarbutton {
   }
   
   #urlbar[focused=true] #urlbar-background{ 
-	margin-bottom: 1px !important;
-	margin-top: 1px !important;
-	margin-left: 1px !important;
-	margin-right: 1px !important; }
+	margin-bottom: 2px !important;
+	margin-top: 2px !important;
+	margin-left: 2px !important;
+	margin-right: 2px !important; }
 
 	#urlbar[open=true] #urlbar-background{ 
-		margin-bottom: 1px !important;
-		margin-top: 1px !important;
-		margin-left: 1px !important;
-		margin-right: 1px !important; }
+		margin-bottom: 2px !important;
+		margin-top: 2px !important;
+		margin-left: 2px !important;
+		margin-right: 2px !important; }
  
   
   #urlbar[focused=true] {
@@ -251,38 +194,44 @@ toolbarbutton {
 	background-image: linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
   }
 
+  .tab-background {
+	border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  margin-block: 2px 0 !important;
+}
+
 /*toolbar buttons*/
 .toolbarbutton-1 {
-	fill: #ffffff !important;
+	fill: #9f1aff !important;
   }
   
   .toolbarbutton-1:hover {
-	fill: #AAB0AD !important;
+	fill: #00DDFF !important;
   }
   
   .toolbarbutton-1[open="true"] {
-	fill: #ffffff !important;
+	fill: #00DDFF !important;
   }
   
   .toolbarbutton-1[disabled] {
-	fill: #737477 !important;
+	fill: #652299 !important;
   }
    
   /*contextmenu right-click pg*/
   #context-navigation menuitem {
-	color: #ffffff !important;
+	color: #9f1aff !important;
   }
 
   #context-navigation menuitem[disabled] {
-	color: #737477 !important;
+	color: #652299 !important;
   }
 
   #context-navigation menuitem:hover {
-	color: #AAB0AD !important;
+	color: #00DDFF !important;
   }
 
   #context-navigation menuitem:hover[disabled] {
-	color: #737477 !important;
+	color: #652299 !important;
   } 
 
   .close-icon:hover {
@@ -294,114 +243,10 @@ toolbarbutton {
 /* sidebar bgcolor to proton dark */
   #sidebar-header,#sidebar-search-container,#bookmarks-view-children,#historyTree {
 	background-color: #2b2a33 !important;
-	-moz-appearance:none!important;
-	
-  }
-  #bookmarksPanel, #history-panel {
-	background-color: #2b2a33 !important;
-  }
-/* synced tabs sidebar bgcolor */  
-  #template-container.content-scrollable{
-	background-color: #2b2a33 !important;
-  }
+	-moz-appearance:none!important;}
 
-  .sidebar-splitter {
-	display: none !important
-  }
-/*toolbar hamburger menu gradient color*/
-  #appMenu-fxa-separator
-  {
-	border-image: 1 1 1 1 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
-  }
-
-/*link hover tooltip custom*/
-#statuspanel-label {
-	-moz-appearance: none !important;
-	  color: #fff !important;
-	  background-color: #2B2A33 !important;
-	border: 1px solid transparent !important;
-	border-image: 1 1 0 0 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
-  
-  }
- 
-
-/* tab burst color */
-  .tab-loading-burst[bursting]::before {
-    fill: #00DDFF !important
-}
-/* To remove tab burst animation - uncomment below code */
-/*.tab-loading-burst {
-  display: none !important;
-}*/
-
-/* tab loading icon color */
-.tab-throbber::before {
-	fill: #00DDFF !important;
-	opacity: 1 !important;
-	}
-
-/*min max close buttons and colors */
-	.titlebar-button {
-		
-		padding-left: 3px !important;
-		padding-right: 3px !important;
-	}
-
-	:root[sizemode=fullscreen]
-	#minimize-button,
-	#restore-button,
-	#close-button
-	{
-		
-		stroke: #00DDFF !important;
-		
-	}
-	:root[sizemode=fullscreen] #close-button:hover
-	{
-		stroke: #FFF !important;	
-	}
-
-	.titlebar-buttonbox-container .titlebar-button .toolbarbutton-icon {
-		stroke: #00DDFF;
-	}
-	.titlebar-buttonbox-container .titlebar-button.titlebar-close:hover .toolbarbutton-icon {
-		stroke: #FFF;
-	}
-
-	
-/*bookmarks star in url bar removed */
-#star-button-box { display: none !important; }
-
-/* bookmarks star appear on urlbar hover */
-  /*  #urlbar:hover #star-button-box{
-    display: flex !important;
-} */
-
-/* bookmarks star appear when urlbar focused and opened  */
- #urlbar[focused=true] #star-button-box{
-    display: flex !important;
-}
-
-#urlbar[open=true] #star-button-box{
-    display: flex !important;
-} 
-
-/* navbar compact */
-#urlbar{
-	min-height: 35px !important; 
-	margin-block: 0px 0px!important;
-}
-#urlbar-background{
-	margin-block: 0px 0px !important;
-}
-#urlbar-container{
-	margin-block: 0px -4px;
-}
-#searchbar {
-	min-height: 35px !important;
-	margin-block: -4px !important;
-}
-
+:root{ 
+		--toolbar-field-focus-border-color: transparent !important;}
 
 /*tooltip dark theme*/
 tooltip {
@@ -412,6 +257,97 @@ tooltip {
 	border-image: 1 1 1 1 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
   
   }
+
+  /* navbar compact */
+#urlbar{
+	min-height: 26px !important; 
+	margin-block: 0px 0px!important;
+}
+#urlbar-background{
+	margin-block: 0px 0px !important;
+}
+#urlbar-container{
+	margin-block: 0px -4px;
+}
+#searchbar {
+	min-height: 26px !important;
+	margin-block: -4px !important;
+}
+
+/*toolbar hamburger menu gradient color*/
+#appMenu-fxa-separator
+{
+  border-image: 1 1 1 1 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
+}
+
+/*link hover tooltip custom*/
+#statuspanel-label {
+  -moz-appearance: none !important;
+	color: #fff !important;
+	background-color: #2B2A33 !important;
+  border: 1px solid transparent !important;
+  border-image: 1 1 0 0 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
+
+}
+
+
+/* tab burst color */
+.tab-loading-burst[bursting]::before {
+  fill: #00DDFF !important
+}
+/* To remove tab burst animation - uncomment below code */
+/*.tab-loading-burst {
+display: none !important;
+}*/
+
+/* tab loading icon color */
+.tab-throbber::before {
+  fill: #00DDFF !important;
+  opacity: 1 !important;
+  }
+
+/*min max close buttons and colors */
+  .titlebar-button {
+	  
+	  padding-left: 12px !important;
+	  padding-right: 12px !important;
+  }
+
+  :root[sizemode=fullscreen]
+  #minimize-button,
+  #restore-button,
+  #close-button
+  {
+	  
+	  stroke: #00DDFF !important;
+	  
+  }
+  :root[sizemode=fullscreen] #close-button:hover
+  {
+	  stroke: #FFF !important;	
+  }
+
+  .titlebar-buttonbox-container .titlebar-button .toolbarbutton-icon {
+	  stroke: #00DDFF;
+  }
+  .titlebar-buttonbox-container .titlebar-button.titlebar-close:hover .toolbarbutton-icon {
+	  stroke: #FFF;
+  }
+
+ /* synced tabs sidebar bgcolor */  
+ #template-container.content-scrollable{
+	background-color: #2b2a33 !important;
+  }
+
+  .sidebar-splitter {
+	display: none !important
+  }
+
+  #bookmarksPanel, #history-panel {
+	background-color: #2b2a33 !important;
+  }
+
+  
 
 /* Download pop up and app picker window dark mode */
 @-moz-document url("chrome://mozapps/content/downloads/unknownContentType.xhtml") {
@@ -493,3 +429,4 @@ tooltip {
 		}
 
 }
+
